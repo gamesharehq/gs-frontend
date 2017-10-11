@@ -4,6 +4,7 @@
 
 const path = require('path');
 const webpack = require('webpack');
+const env = require('../../env');
 
 // Remove this line once the following warning goes away (it was meant for webpack loader authors not users):
 // 'DeprecationWarning: loaderUtils.parseQuery() received a non-string value which can be problematic,
@@ -94,6 +95,8 @@ module.exports = (options) => ({
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify(process.env.NODE_ENV),
+        PORT: JSON.stringify(env.PORT),
+        CORE_API_URL: JSON.stringify(env.CORE_API_URL),
       },
     }),
     new webpack.NamedModulesPlugin(),
