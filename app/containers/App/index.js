@@ -22,6 +22,7 @@ export default function App() {
     <div>
       <Switch>
         <Route exact path="/" component={HomePage} />
+        <Route path="/create-account" component={CreateAccount} />
         <Route component={NotFoundPage} />
       </Switch>
     </div>
