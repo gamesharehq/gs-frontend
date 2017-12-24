@@ -15,11 +15,19 @@ import injectReducer from 'utils/injectReducer';
 import makeSelectCreateAccount from './selectors';
 import reducer from './reducer';
 import saga from './saga';
+import CreateAccountForm from '../../components/CreateAccountForm/index';
 
 export class CreateAccount extends React.Component { // eslint-disable-line react/prefer-stateless-function
+  submit = (values) => {
+    console.log(values);
+  }
+
   render() {
     return (
-      <div>
+      <div className="container">
+        <CreateAccountForm
+          onSubmit={this.submit}
+        />
       </div>
     );
   }
